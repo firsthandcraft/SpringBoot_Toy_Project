@@ -13,6 +13,13 @@ intelliJ
 - gradle
   
 [setting설정법](https://github.com/firsthandcraft/SpringBoot_Toy_Project/wiki/Setting)
+[build.gradle 에서 dependencies 추가한것]()
+```
+implementation 'org.springframework.boot:spring-boot-starter-data-jpa' #jpa
+implementation group: 'org.javassist', name: 'javassist', version: '3.15.0-GA' #클래스를 동적으로
+implementation 'org.junit.jupiter:junit-jupiter:5.8.1' #지금은 필요 없지만 테스트 주고 개발에서 사용하지만, 코드의 유지 보수 및 운영 환경에서의 에러를 미리 방지하기 위해서 단위 별로 검증 하는 테스트 프레임워크
+runtimeOnly 'mysql:mysql-connector-java:8.0.32'
+```
 
 #### Context
 ##### ■ 문제 상황
@@ -30,7 +37,6 @@ Controller에서 REST API 제작
 JPA를 이용하여 반복되던 CRUD SQL 코드가 줄이고 sql 에서 테이블을 따로 만드는 과정을 간소화함
 Mysql이용하여 DB와 연결
 Session을 이용하여 해당 유저만 접근 기능 제작
-
 
 [ERD파일]()
 
