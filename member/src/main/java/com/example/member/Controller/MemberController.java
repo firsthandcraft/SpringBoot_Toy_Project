@@ -15,6 +15,10 @@ import java.util.List;
 public class MemberController {
     //생성자 주입
     private final MemberService memberService;
+     /*@Autowired
+    public MemberController(MemberService memberService) {
+        this.memberService = memberService;
+    } 와  @RequiredArgsConstructor 이게 같은 코드 */
     String saveForm(){
         return "join";
     };
@@ -75,6 +79,7 @@ public class MemberController {
     }*/
     @PostMapping("/member/save")
     public String save(@ModelAttribute MemberDto memberDto){
+        //@RequestParam과 @ModelAttribute의 눈에 띄는 차이점은, 1:1 매핑이냐, 객체 매핑이냐 인것
         System.out.println("MemberController.save");//soutm
         System.out.println(memberDto);
         memberService.save(memberDto);
@@ -96,6 +101,7 @@ public class MemberController {
 
     @PostMapping("/member/email-check")
     public @ResponseBody String emailCheck(@RequestParam("memberEmail") String memberEmail) {
+        //@RequestParam  어노테이션은 사용자가 요청시 전달하는 값을 Handler(Controller)의 매개변수로 1:1 맵핑
         System.out.println("memberEmail = " + memberEmail);
         String checkResult = memberService.emailCheck(memberEmail);
         return checkResult;
