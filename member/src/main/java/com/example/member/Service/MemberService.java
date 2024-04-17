@@ -37,7 +37,7 @@ public class MemberService {
             MemberEntity memberEntity = byMemberEmail.get();
             if (memberEntity.getMemberPw().equals(memberDto.getMemberPw())) {//string 값일때 equals로 숫자는 == 로
                 //비밀번호 일치
-                MemberDto dto = MemberDto.toMemberDTO(memberEntity);
+                MemberDto dto = MemberDto.toMemberDTO(memberEntity);//(id=12, memberEmail=eee, memberPw=eee, memberName=eee)
                 return dto;
             } else {
                 return null;

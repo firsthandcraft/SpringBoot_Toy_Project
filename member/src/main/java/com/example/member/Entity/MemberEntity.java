@@ -10,6 +10,7 @@ import lombok.Setter;
 @Entity
 @Table(name="member_table")
 public class MemberEntity {//일종의 테이블 역할 jpa
+    //Entity 실제 DataBase 의 테이블과 1:1 매핑되는 클래스이다. 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)//auto_increment
     private Long id;
@@ -23,7 +24,7 @@ public class MemberEntity {//일종의 테이블 역할 jpa
     @Column
     private String memberName;
 
-    public static MemberEntity toMemberEntity(MemberDto memberDto){
+    public static MemberEntity toMemberEntity(MemberDto memberDto){//dto를 entity로 변환해주었다.
         MemberEntity memberEntity= new MemberEntity();
         memberEntity.setMemberEmail(memberDto.getMemberEmail());
         memberEntity.setMemberPw(memberDto.getMemberPw());
@@ -38,4 +39,13 @@ public class MemberEntity {//일종의 테이블 역할 jpa
         memberEntity.setMemberName(memberDto.getMemberName());
         return memberEntity;
     }
+    /**@Builder패턴으로 사용하기
+    public static MemberEntity toUpdateMemberEntity(MemberDto memberDto) {
+        return MemberEntity.builder()
+                .id(memberDto.getId())
+                .memberEmail(memberDto.getMemberEmail())
+                .memberPw(memberDto.getMemberPw())
+                .memberName(memberDto.getMemberName())
+                .build();
+    } */
 }

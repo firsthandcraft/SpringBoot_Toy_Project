@@ -42,3 +42,9 @@ Session을 이용하여 해당 유저만 접근 기능 제작
 
 <img width="228" alt="스크린샷 2024-04-17 오후 4 23 18" src="https://github.com/firsthandcraft/SpringBoot_Toy_Project/assets/97497153/f6ae7a3f-d23c-44a2-9db0-4cd8e9857e33">
 
+
+### mySql 사용시 쿼리에 
+```
+use memberDb;
+```
+하고 conmmand+enter
