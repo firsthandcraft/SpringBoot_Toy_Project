@@ -1,26 +1,19 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>detail</title>
+    <title>edit</title>
     <link rel="stylesheet" href="https://rsms.me/inter/inter.css">
     <link rel="stylesheet" href="./static/css/reset.css">
 </head>
 <body>
-    <h2>welcome to detail</h2>
-    <table>
-        <tr>
-            <th>id</th>
-            <th>email</th>
-            <th>password</th>
-            <th>name</th>
-        </tr>
-        <tr>
-            <td th:text="${member.id}"></td>
-            <td th:text="${member.memberEmail}"></td>
-            <td th:text="${member.memberPw}"></td>
-            <td th:text="${member.memberName}"></td>
-        </tr>
-    </table>
+    <h2>welcome to edit</h2>
+    <form action="/member/update" method="post">
+        <input type="hidden" th:value="${updateMember.id}" name="id"><br>
+        이메일: <input type="text" th:value="${updateMember.memberEmail}" name="memberEmail" readonly> <br>
+        비밀번호: <input type="text" th:value="${updateMember.memberPw}" name="memberPw"> <br>
+        이름: <input type="text" th:value="${updateMember.memberName}" name="memberName"> <br>
+        <input type="submit" value="정보수정">
+    </form>
 </body>
 </html>

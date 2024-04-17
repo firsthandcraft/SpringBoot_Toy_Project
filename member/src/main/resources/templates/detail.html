@@ -2,14 +2,25 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>index</title>
+    <title>detail</title>
     <link rel="stylesheet" href="https://rsms.me/inter/inter.css">
     <link rel="stylesheet" href="./static/css/reset.css">
 </head>
 <body>
-    <h2>welcome to index</h2>
-    <a href="/member/save">회원가입</a>
-    <a href="/member/login">로그인</a>
-    <a href="/member/">회원목록</a>
+    <h2>welcome to detail</h2>
+    <table>
+        <tr>
+            <th>id</th>
+            <th>email</th>
+            <th>password</th>
+            <th>name</th>
+        </tr>
+        <tr>
+            <td th:text="${member.id}"></td>
+            <td th:text="${member.memberEmail}"></td>
+            <td th:text="${member.memberPw}"></td>
+            <td th:text="${member.memberName}"></td>
+        </tr>
+    </table>
 </body>
 </html>

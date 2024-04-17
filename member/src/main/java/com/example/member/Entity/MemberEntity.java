@@ -30,4 +30,12 @@ public class MemberEntity {//일종의 테이블 역할 jpa
         memberEntity.setMemberName(memberDto.getMemberName());
         return memberEntity;
     }
+    public static MemberEntity toUodateMemberEntity(MemberDto memberDto){
+        MemberEntity memberEntity= new MemberEntity();
+        memberEntity.setId(memberDto.getId());
+        memberEntity.setMemberEmail(memberDto.getMemberEmail());
+        memberEntity.setMemberPw(memberDto.getMemberPw());
+        memberEntity.setMemberName(memberDto.getMemberName());
+        return memberEntity;
+    }
 }
